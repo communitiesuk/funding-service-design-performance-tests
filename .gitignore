@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+# Bandit File
+*bandit_security.json
+
+# Bandit File
+*pylama_report.json
+
 # locust html report
 locust_html_report.html
 
