@@ -28,20 +28,14 @@ jobs:
           run:  pylama --format json --report pylama_report.json
         - name: run Bandit
           run: bandit . -f json -o bandit_security.json
+          retention-days: 5
         - name: run performance tests
           run: python -m locust --users 3 --spawn-rate 1 --run-time 1s --headless
           continue-on-error: true
-        
-  artifacts:
-        needs: testing
-        runs-on: ubuntu-latest
-        steps:
-          - name: 'Upload Artifact'
-            uses: actions/upload-artifact@v2
-            with:
-              name: performance-test-report
-              path: |
-                locust_html_report.html
-                bandit_security.json
-                pylama_report.json
-              retention-days: 5
+        - name: 'Upload Artifact'
+          uses: actions/upload-artifact@v2
+            path: |
+              locust_html_report.html
+              bandit_security.json
+              pylama_report.json
+            retention-days: 5
