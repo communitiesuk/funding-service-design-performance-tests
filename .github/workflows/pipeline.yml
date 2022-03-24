@@ -31,12 +31,17 @@ jobs:
         - name: run performance tests
           run: python -m locust --users 3 --spawn-rate 1 --run-time 1s --headless
           continue-on-error: true
-        - name: 'Upload Artifact'
-          uses: actions/upload-artifact@v2
-          with:
-            name: performance-test-report
-            path: |
-              locust_html_report.html
-              bandit_security.json
-              pylama_report.json
-            retention-days: 5
+        
+  artifacts:
+        needs: testing
+        runs-on: ubuntu-latest
+        steps:
+          - name: 'Upload Artifact'
+            uses: actions/upload-artifact@v2
+            with:
+              name: performance-test-report
+              path: |
+                locust_html_report.html
+                bandit_security.json
+                pylama_report.json
+              retention-days: 5
