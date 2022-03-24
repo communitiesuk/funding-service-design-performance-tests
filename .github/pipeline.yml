@@ -1,3 +1,4 @@
+name: Funding Service Design Performance Test Pipeline
 on: push
 jobs:
   build-runner:
