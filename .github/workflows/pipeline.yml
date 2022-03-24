@@ -15,7 +15,6 @@ jobs:
   testing:
       needs: build-runner
       runs-on: ubuntu-latest
-      continue-on-error: run performance tests
       steps:
         - name: checkout code
           uses: actions/checkout@v2
@@ -31,6 +30,7 @@ jobs:
           run: bandit . -f json -o bandit_security.json
         - name: run performance tests
           run: python -m locust --users 3 --spawn-rate 1 --run-time 1s --headless
+          continue-on-error: true
         - name: 'Upload Artifact'
           uses: actions/upload-artifact@v2
           with:
