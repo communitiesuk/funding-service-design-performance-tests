@@ -19,7 +19,8 @@ class FundStore(HttpUser):
     @task
     def post_new_application(self):
         """
-        Performance test for POST /funds/search/?search_items={fund_name} that expects a 200.
+        Performance test for POST /funds/search/?search_items={fund_name}
+         that expects a 200.
         """
         with self.client.post(
             f"/funds/search/?search_items={self.fund_name}",

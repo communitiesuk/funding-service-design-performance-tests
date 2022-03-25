@@ -12,7 +12,8 @@ class RoundStore(HttpUser):
     @task
     def get_funding_round(self):
         """
-        Performance test for GET /fund/{fund_id}/round/{round_id} that expects a 200
+        Performance test for GET /fund/{fund_id}/round/{round_id}
+         that expects a 200
         """
         with self.client.get(
             f"/fund/{self.fund_id}/round/{self.round_id}", catch_response=True
