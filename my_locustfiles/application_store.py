@@ -1,7 +1,9 @@
-from locust import HttpUser, task
 import json
+
 from common.common_methods import check_expected_status
 from common.config import APPLICATION_STORE
+from locust import HttpUser
+from locust import task
 
 
 class ApplicationStore(HttpUser):

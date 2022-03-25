@@ -1,6 +1,7 @@
-from locust import HttpUser, task
-from common.config import ROUND_STORE
 from common.common_methods import check_expected_status
+from common.config import ROUND_STORE
+from locust import HttpUser
+from locust import task
 
 
 class RoundStore(HttpUser):

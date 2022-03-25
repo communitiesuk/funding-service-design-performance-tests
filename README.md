@@ -47,4 +47,4 @@ To add a new performance test you need to add a py file to my_locustfiles contai
 To add a new performance test you need to add a py file to my_locustfiles containing the performance tests and then add an import to the base locustfile.py in the root of the directory
 
 # Linting
-Black (https://black.readthedocs.io/en/stable/), Pylama (https://klen.github.io/pylama/) and Bandit (https://bandit.readthedocs.io/en/latest/) have been added to staticly check the code
+Black (https://black.readthedocs.io/en/stable/), flake8 (https://flake8.pycqa.org/en/latest/) and Bandit (https://bandit.readthedocs.io/en/latest/) have been added to staticly check the code

@@ -3,10 +3,6 @@ repos:
     rev: v1.0.5
     hooks:
     -   id: python-bandit-vulnerability-check
--   repo: https://github.com/gvanderest/pylama-pre-commit
-    rev: 0.1.2
-    hooks:
-    - id: pylama
 -   repo: https://github.com/ambv/black
     rev: 21.12b0
     hooks:
