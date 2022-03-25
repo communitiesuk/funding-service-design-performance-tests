@@ -1,5 +1,4 @@
 locust==2.5.1
-pylama==8.3.8
 bandit==1.7.4
 black==22.1.0
 pre-commit==2.16.0

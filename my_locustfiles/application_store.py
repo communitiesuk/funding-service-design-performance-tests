@@ -1,12 +1,12 @@
 from locust import HttpUser, task
-from common.config import Configs
 import json
-from common.common_methods import Common
+from common.common_methods import check_expected_status
+from common.config import APPLICATION_STORE
 
 
 class ApplicationStore(HttpUser):
 
-    host = Configs.config["Hosts"]["ApplicationStore"]
+    host = APPLICATION_STORE
     new_application_json_file = open(
         "./data/application_store/new_application.json", "r"
     )
@@ -15,21 +15,32 @@ class ApplicationStore(HttpUser):
 
     @task
     def get_all_funds(self):
-        with self.client.get("/fund/all_funds", catch_response=True) as response:
-            Common.check_expected_status(response, 200)
+        """
+        Performance test for GET /fund/all_funds that expects a 200
+        """
+        with self.client.get(
+            "/fund/all_funds", catch_response=True
+        ) as response:
+            check_expected_status(response, 200)
 
     @task
     def post_new_application(self):
+        """
+        Performance test for POST /fund/new_application that expects a 201
+        """
         with self.client.post(
             "/fund/new_application",
             json=self.new_application_json,
             catch_response=True,
         ) as response:
-            Common.check_expected_status(response, 201)
+            check_expected_status(response, 201)
 
     @task
     def get_fund(self):
+        """
+        Performance test for GET /fund/{fund_name} that expects a 200
+        """
         with self.client.get(
             f"/fund/{self.fund_name}", catch_response=True
         ) as response:
-            Common.check_expected_status(response, 200)
+            check_expected_status(response, 200)
