@@ -28,7 +28,7 @@ class ApplicationStore(HttpUser):
     @task
     def post_new_application(self):
         """
-        Performance test for POST /application/ that expects a 201
+        Performance test for POST /application that expects a 201
         """
         with self.client.post(
             "/application",

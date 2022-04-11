@@ -2,10 +2,10 @@
     "name": "Funding Service Design",
     "questions": [ {
       "question": "Performance Test Run",
-      "fields": {},
+      "fields": [],
       "category": "Performance Test Run",
       "index": 0,
       "status": "Performance Test Run"
     }],
-    "metadata": "Performance Test Run"
+    "metadata": {}
   }
