@@ -31,7 +31,7 @@ class ApplicationStore(HttpUser):
         Performance test for POST /application that expects a 201
         """
         with self.client.post(
-            "/application",
+            "/applications",
             json=self.new_application_json,
             catch_response=True,
         ) as response:
