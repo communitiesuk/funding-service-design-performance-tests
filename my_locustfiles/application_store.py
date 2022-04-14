@@ -18,10 +18,10 @@ class ApplicationStore(HttpUser):
     @task
     def get_all_applications(self):
         """
-        Performance test for GET /applications/search that expects a 200
+        Performance test for GET /applications that expects a 200
         """
         with self.client.get(
-            "/applications/search", catch_response=True
+            "/applications", catch_response=True
         ) as response:
             check_expected_status(response, 200)
 
@@ -40,9 +40,9 @@ class ApplicationStore(HttpUser):
     @task
     def get_applications_for_a_fund(self):
         """
-        Performance test for GET /applications/search?fund_id={fund_id} that expects a 200
+        Performance test for GET /applications?fund_id={fund_id} that expects a 200
         """
         with self.client.get(
-            f"/applications/search?fund_id={self.fund_id}", catch_response=True
+            f"/applications?fund_id={self.fund_id}", catch_response=True
         ) as response:
             check_expected_status(response, 200)
