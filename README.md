@@ -35,7 +35,7 @@ Enter the virtual environment as described above, then:
 python -m locust
 
 # Locust config
-Ther is a locust config file in the repository that manages how the tests are run and where they are run against. Change the values in there based on the needs oh your performance testing. The host can be changed to point at a local running version of the application.
+There is a locust config file in the repository that manages how the tests are run and where they are run against. Change the values in there based on the needs oh your performance testing. The host can be changed to point at a local running version of the application.
 
 # Locust HTML report
 A html report is produced at the end of a run and is stored in the root of the project. This shows the results of the tests.
