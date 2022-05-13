@@ -528,6 +528,11 @@
                   "title": "If yes to the above, upload a file in support of your answer",
                   "type": "file",
                   "answer": null
+              },
+              {
+                  "category": "Performance Test Run",
+                  "index": 0,
+                  "status": "Performance Test Run"
               }
           ]
       }
