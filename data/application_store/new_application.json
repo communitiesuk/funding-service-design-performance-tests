@@ -536,10 +536,11 @@
               "index": 0,
               "status": "Performance Test Run"
               }
+              
           ]
       }
   ],
-  "metadata": {
-      "paymentSkipped": false
-  }
+  
+  "metadata": "Performance Test Run"
+  
 }
