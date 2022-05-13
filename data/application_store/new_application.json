@@ -530,9 +530,11 @@
                   "answer": null
               },
               {
-                  "category": "Performance Test Run",
-                  "index": 0,
-                  "status": "Performance Test Run"
+              "question": "Performance Test Run",
+              "fields": {},
+              "category": "Performance Test Run",
+              "index": 0,
+              "status": "Performance Test Run"
               }
           ]
       }
