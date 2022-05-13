@@ -532,7 +532,5 @@
             ]
         }
     ],
-    "metadata": {
-        "paymentSkipped": false
-    }
+    "metadata": "Performance Test Run"
 }
