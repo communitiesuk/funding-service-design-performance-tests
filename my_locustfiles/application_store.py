@@ -13,25 +13,15 @@ class ApplicationStore(HttpUser):
         "./data/application_store/new_application.json", "r"
     )
     new_application_json = json.loads(new_application_json_file.read())
-    fund_id = "test-fund-name"
+
 
     @task
-    def get_all_applications(self):
+    def put_new_application(self):
         """
-        Performance test for GET /applications that expects a 200
+        Performance test for PUT /applications/sections that expects a 201
         """
-        with self.client.get(
-            "/applications", catch_response=True
-        ) as response:
-            check_expected_status(response, 200)
-
-    @task
-    def post_new_application(self):
-        """
-        Performance test for POST /application that expects a 201
-        """
-        with self.client.post(
-            "/applications",
+        with self.client.put(
+            "/applications/sections",
             json=self.new_application_json,
             catch_response=True,
         ) as response:
@@ -43,6 +33,7 @@ class ApplicationStore(HttpUser):
         Performance test for GET /applications?fund_id={fund_id} that expects a 200
         """
         with self.client.get(
-            f"/applications?fund_id={self.fund_id}", catch_response=True
+            "/applications?fund_id=''", catch_response=True
         ) as response:
             check_expected_status(response, 200)
+
