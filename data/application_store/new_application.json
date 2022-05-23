@@ -15,13 +15,13 @@
                     "key": "applicant-email",
                     "title": "Email",
                     "type": "text",
-                    "answer": "bob@bob.com"
+                    "answer": "a@example.com"
                 },
                 {
                     "key": "applicant-telephone-number",
                     "title": "Telephone number",
                     "type": "text",
-                    "answer": "01206 394204"
+                    "answer": "01632 960 000"
                 },
                 {
                     "key": "applicant-website",
