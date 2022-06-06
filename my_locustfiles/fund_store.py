@@ -17,18 +17,6 @@ class FundStore(HttpUser):
             check_expected_status(response, 200)
 
     @task
-    def post_a_fund_search(self):
-        """
-        Performance test for POST /funds/search/?search_items={fund_name}
-         that expects a 200.
-        """
-        with self.client.post(
-            f"/funds/search/?search_items={self.fund_name}",
-            catch_response=True,
-        ) as response:
-            check_expected_status(response, 200)
-
-    @task
     def get_fund(self):
         """
         Performance test for GET /funds/{fund_name} that expects a 200
