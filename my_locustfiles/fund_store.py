@@ -13,7 +13,7 @@ class FundStore(HttpUser):
         """
         Performance test for GET /funds/ that expects a 200
         """
-        with self.client.get("/funds/", catch_response=True) as response:
+        with self.client.get("/funds", catch_response=True) as response:
             check_expected_status(response, 200)
 
     @task
