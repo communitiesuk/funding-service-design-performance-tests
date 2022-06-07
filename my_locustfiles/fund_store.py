@@ -13,17 +13,17 @@ class FundStore(HttpUser):
         """
         Performance test for GET /funds/ that expects a 200
         """
-        with self.client.get("/funds/", catch_response=True) as response:
+        with self.client.get("/funds", catch_response=True) as response:
             check_expected_status(response, 200)
 
     @task
-    def post_a_fund_search(self):
+    def get_a_fund_search(self):
         """
-        Performance test for POST /funds/search/?search_items={fund_name}
+        Performance test for GET /funds?search_items={fund_name}
          that expects a 200.
         """
-        with self.client.post(
-            f"/funds/search/?search_items={self.fund_name}",
+        with self.client.get(
+            f"/funds?search_items={self.fund_name}",
             catch_response=True,
         ) as response:
             check_expected_status(response, 200)
