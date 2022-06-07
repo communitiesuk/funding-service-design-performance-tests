@@ -7,6 +7,8 @@ from locust import task
 class FundStore(HttpUser):
     host = FUND_STORE
     fund_name = "harry-s-breakfast-fund"
+    fund_id = "funding-service-design"
+    round_id = "spring"
 
     @task
     def list_all_funds(self):
@@ -35,5 +37,26 @@ class FundStore(HttpUser):
         """
         with self.client.get(
             f"/funds/{self.fund_name}", catch_response=True
+        ) as response:
+            check_expected_status(response, 200)
+
+    @task
+    def get_funding_round(self):
+        """
+        Performance test for GET /funds/{fund_id}/rounds/{round_id}
+         that expects a 200
+        """
+        with self.client.get(
+            f"/funds/{self.fund_id}/rounds/{self.round_id}", catch_response=True
+        ) as response:
+            check_expected_status(response, 200)
+
+    @task
+    def get_fund(self):
+        """
+        Performance test for GET /funds/{fund_id}/rounds that expects a 200
+        """
+        with self.client.get(
+            f"/funds/{self.fund_id}/rounds", catch_response=True
         ) as response:
             check_expected_status(response, 200)
