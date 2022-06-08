@@ -8,6 +8,7 @@ class FundStore(HttpUser):
     host = FUND_STORE
     fund_id = "funding-service-design"
     round_id = "spring"
+    search_query = "breakfast,fund"
 
     @task
     def list_all_funds(self):
@@ -20,11 +21,11 @@ class FundStore(HttpUser):
     @task
     def get_a_fund_search(self):
         """
-        Performance test for GET /funds?search_items={fund_id}
+        Performance test for GET /funds?search_items={search_query}
          that expects a 200.
         """
         with self.client.get(
-            f"/funds?search_items={self.fund_id}",
+            f"/funds?search_items={self.search_query}",
             catch_response=True,
         ) as response:
             check_expected_status(response, 200)
