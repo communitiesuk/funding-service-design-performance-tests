@@ -35,16 +35,13 @@ Enter the virtual environment as described above, then:
 python -m locust
 
 # Locust config
-There is a locust config file in the repository that manages how the tests are run and where they are run against. Change the values in there based on the needs oh your performance testing. The host can be changed to point at a local running version of the application.
+There is a locust config file in the repository that manages how the tests are run and where they are run against. Change the values in there based on the needs of your performance testing. The host can be changed to point at a local running version of the application.
 
 # Locust HTML report
 A html report is produced at the end of a run and is stored in the root of the project. This shows the results of the tests.
 
 # Adding a new performance test
-To add a new performance test you need to add a py file to my_locustfiles containing the performance tests and then add an import to the base locustfile.py in the root of the directory
-
-# Adding a new performance test
-To add a new performance test you need to add a py file to my_locustfiles containing the performance tests and then add an import to the base locustfile.py in the root of the directory
+To add a new performance test you need to add a py file to my_locustfiles containing the performance tests and then add an import to the base locustfile.py in the root of the directory.
 
 # Linting
 Black (https://black.readthedocs.io/en/stable/), flake8 (https://flake8.pycqa.org/en/latest/) and Bandit (https://bandit.readthedocs.io/en/latest/) have been added to staticly check the code
