@@ -7,6 +7,7 @@ from locust import task
 
 class AssessmentStore(HttpUser):
     host = ASSESSMENT_STORE
+    assessment_id = 1
 
 
     @task
@@ -17,4 +18,10 @@ class AssessmentStore(HttpUser):
         with self.client.get("/assessments", catch_response=True) as response:
             check_expected_status(response, 200)
 
-    
+    @task
+    def list_of_sub_criterias(self):
+        """
+        Performance test for GET /assessments/{assessment_id}/scores that expects a 200
+        """
+        with self.client.get(f"/assessments/{self.assessment_id}/scores", catch_response=True) as response:
+            check_expected_status(response, 200)
