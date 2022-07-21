@@ -19,9 +19,11 @@ class AssessmentStore(HttpUser):
             check_expected_status(response, 200)
 
     @task
-    def list_of_sub_criterias(self):
+    def get_scores(self):
         """
         Performance test for GET /assessments/{assessment_id}/scores that expects a 200
         """
         with self.client.get(f"/assessments/{self.assessment_id}/scores", catch_response=True) as response:
             check_expected_status(response, 200)
+
+    
