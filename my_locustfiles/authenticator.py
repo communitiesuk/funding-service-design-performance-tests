@@ -30,3 +30,13 @@ class Authenticator(HttpUser):
             "/service/magic-links/check-email?email=test%40test.com", catch_response=True
         ) as response:
             check_expected_status(response, 200)
+
+    @task
+    def get_magic_link_email_id(self):
+        """
+        Performance test for GET magic link email ID that expects a 200
+        """
+        with self.client.get(
+            "/service/magic-links/landing/TUwinPwR"
+        ) as response:
+            check_expected_status(response, 200)
