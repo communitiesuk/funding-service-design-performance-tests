@@ -37,6 +37,6 @@ class Authenticator(HttpUser):
         Performance test for GET magic link email ID that expects a 200
         """
         with self.client.get(
-            "/service/magic-links/landing/TUwinPwR"
+            "/service/magic-links/landing/TUwinPwR", catch_response=True
         ) as response:
             check_expected_status(response, 200)
