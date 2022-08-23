@@ -40,3 +40,22 @@ class Authenticator(HttpUser):
             "/service/magic-links/landing/TUwinPwR", catch_response=True
         ) as response:
             check_expected_status(response, 200)
+
+    # Tests using Swagger API as a reference
+    @task
+    def post_create_new_magic_link(self):
+        """
+        Performance test for POST create new magic link that expects a 201
+        """
+        with self.client.post("/magic-links", json={"email":"a@example.com", "redirectUrl":"https://example.com/redirect-url"}, catch_response=True
+        ) as response:
+            check_expected_status(response, 201)
+
+    @task
+    def get_search_magic_link(self):
+        """
+        Performance test for GET search magic link that expects a 200
+        """
+        with self.client.get("/magic-links", catch_response=True
+        ) as response:
+            check_expected_status(response, 200)
