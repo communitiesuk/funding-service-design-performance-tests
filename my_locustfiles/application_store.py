@@ -21,7 +21,7 @@ class ApplicationStore(HttpUser):
         Performance test for PUT /applications/sections that expects a 201
         """
         with self.client.put(
-            "/applications/sections",
+            "/applications/forms",
             json=self.new_application_json,
             catch_response=True,
         ) as response:
