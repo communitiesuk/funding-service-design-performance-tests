@@ -6,3 +6,4 @@ FUND_STORE = (
 )
 APPLICATION_STORE = "https://funding-service-design-application-store-test.london.cloudapps.digital"  # noqa
 AUTHENTICATOR = "https://funding-service-design-authenticator-test.london.cloudapps.digital" # noqa
+FRONTEND = "https://frontend.test.gids.dev" # noqa
