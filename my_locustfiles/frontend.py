@@ -16,7 +16,7 @@ class FrontEnd(HttpUser):
         Performance test for GET start page that expects a 200
         """
         with self.client.get(
-            "", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "", catch_response=True
         ) as response:
             check_expected_status(response, 200)
     
@@ -27,7 +27,7 @@ class FrontEnd(HttpUser):
         Performance test for GET applicant dashboard that expects a 200
         """
         with self.client.get(
-            "/account", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "/account", catch_response=True
         ) as response:
             check_expected_status(response, 200)
 
@@ -38,7 +38,7 @@ class FrontEnd(HttpUser):
         Performance test for GET new application that expects a 200
         """
         with self.client.get(
-            "/tasklist/d0b7e173-6690-4f0a-86f2-904810d7eb5d", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "/tasklist/d0b7e173-6690-4f0a-86f2-904810d7eb5d", catch_response=True
         ) as response:
             check_expected_status(response, 200)
     
@@ -49,7 +49,7 @@ class FrontEnd(HttpUser):
         Performance test for GET submit application that expects a 200
         """
         with self.client.post(
-            "/submit_application", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "/submit_application", catch_response=True
         ) as response:
             check_expected_status(response, 200)
     

@@ -19,7 +19,7 @@ class Forms(HttpUser):
         Performance test for GET new application that expects a 200
         """
         with self.client.get(
-            "/organisation-information/check-your-answers", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "/organisation-information/check-your-answers", catch_response=True
         ) as response:
             check_expected_status(response, 200)
 
@@ -31,7 +31,7 @@ class Forms(HttpUser):
         Performance test for GET project information that expects a 200
         """
         with self.client.get(
-            "/project-information/check-your-answers", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "/project-information/check-your-answers", catch_response=True
         ) as response:
             check_expected_status(response, 200)
     
@@ -43,7 +43,7 @@ class Forms(HttpUser):
         Performance test for GET community use that expects a 200
         """
         with self.client.get(
-            "/community-use/check-your-answers", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "/community-use/check-your-answers", catch_response=True
         ) as response:
             check_expected_status(response, 200)
     
@@ -55,7 +55,7 @@ class Forms(HttpUser):
         Performance test for GET funding required that expects a 200
         """
         with self.client.get(
-            "/funding-required/check-your-answers", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "/funding-required/check-your-answers", catch_response=True
         ) as response:
             check_expected_status(response, 200)
     
@@ -68,7 +68,7 @@ class Forms(HttpUser):
         Performance test for GET community benefits that expects a 200
         """
         with self.client.get(
-            "/community-benefits/check-your-answers", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "/community-benefits/check-your-answers", catch_response=True
         ) as response:
             check_expected_status(response, 200)
     
@@ -78,10 +78,10 @@ class Forms(HttpUser):
     @task
     def get_value_to_the_community(self):
         """
-        Performance test for GET value to the communityu that expects a 200
+        Performance test for GET value to the community that expects a 200
         """
         with self.client.get(
-            "/value-to-the-community/check-your-answers", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "/value-to-the-community/check-your-answers", catch_response=True
         ) as response:
             check_expected_status(response, 200)
 
@@ -93,7 +93,7 @@ class Forms(HttpUser):
         Performance test for GET project qualification that expects a 200
         """
         with self.client.get(
-            "/project-qualification/check-your-answers", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "/project-qualification/check-your-answers", catch_response=True
         ) as response:
             check_expected_status(response, 200)
 
@@ -105,7 +105,7 @@ class Forms(HttpUser):
         Performance test for GET declarations that expects a 200
         """
         with self.client.get(
-            "/declarations/check-your-answers", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+            "/declarations/check-your-answers", catch_response=True
         ) as response:
             check_expected_status(response, 200)
     
