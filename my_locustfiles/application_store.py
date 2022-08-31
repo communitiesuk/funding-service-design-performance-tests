@@ -13,6 +13,7 @@ class ApplicationStore(HttpUser):
         "./data/application_store/new_application.json", "r"
     )
     new_application_json = json.loads(new_application_json_file.read())
+    status_only = "IN_PROGRESS"
 
 
     @task
@@ -37,3 +38,12 @@ class ApplicationStore(HttpUser):
         ) as response:
             check_expected_status(response, 200)
 
+    @task
+    def get_applications_status(self):
+        """
+        Performance test for GET /applications?status_only={status_only} that expects a 200
+        """
+        with self.client.get(
+            "/applications?status_only='/{self.status_only}'", catch_response=True
+        ) as response:
+            check_expected_status(response, 200)

@@ -9,3 +9,4 @@ AUTHENTICATOR = "https://funding-service-design-authenticator-test.london.clouda
 FRONTEND = "https://frontend.test.gids.dev" # noqa
 FORMS = "https://forms.test.gids.dev" # noqa
 ACCOUNT = "https://funding-service-design-account-store-test.london.cloudapps.digital" # noqa
+AUTHORIZATION = "Authorization: Basic ZnNkOmZzZA=="

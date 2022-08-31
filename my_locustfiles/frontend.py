@@ -42,3 +42,14 @@ class FrontEnd(HttpUser):
         ) as response:
             check_expected_status(response, 200)
     
+    # Submit application
+    @task
+    def submit_application(self):
+        """
+        Performance test for GET submit application that expects a 200
+        """
+        with self.client.post(
+            "/submit_application", headers={"Authorization":"Basic ZnNkOmZzZA=="}, catch_response=True
+        ) as response:
+            check_expected_status(response, 200)
+    
