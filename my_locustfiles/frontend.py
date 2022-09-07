@@ -27,7 +27,7 @@ class FrontEnd(HttpUser):
         Performance test for GET applicant dashboard that expects a 200
         """
         with self.client.get(
-            "/account", headers={"cookie": "eyJjc3JmX3Rva2VuIjoiMGZiNzQyYjkxZTkwYmFjNWIyMmQ3NzBjNDZiNjIxNzI2MjRhMDM4NyJ9.YwjnXw._QiVXgbFx4GDY_f1RbOkl1mBbAI; fsd_user_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOiJjYTNjZTQzZS1kYWZiLTRlNTktOTczNC0xZjA3YzgwM2U2ZWQiLCJpYXQiOjE2NjI1NDA5MDYsImV4cCI6MTY2MjYyNzMwNn0.ILHz1t5N4vzqHuUd1XiYLigL4PpOmZdK_LFL48j5YE7Pwm6SgXy0Iryh2xZw5jR7F4Oa8knjHLWCCjO6J_7eTqGgDMY0Q_GAd_HDb_VtDIyqn1ZoSK9K5AZcmrhAjfaWKo49FGNs42fwCWi0w9oE-RTLr4u1qfuF661X_deXWi1m7dGx9fL0zM-y8N2p-SCHSIdX9a74vM2QYQ3NtSQJc8_lnNF4ZNXQqEW_16TrQ_xEveUpPC0ZUDD1Ljj-PlnwJBeRKx4H9znZEC8Vc-R3kkX4b-sOAixkbXeUIsSz1otaLqWIQbHEy3iLuiZBXpfgSI3-glnd3l6av8ZKNRU43AuDwNpT4zpVQ17s3f3ZG9bhpDCcgL61azMrYh-ceR79q10kxvTA_9Olqa7eUUe5wTnkoQ7n-vuTemUw2NL4DeOqMbPuE2d2pjADEZLk2soz474Fvqy5eZGwMmLnHOD1ZAxLeTCk0lACwV2FeyD0cHWBpry36_deyzJSWxJvRkJT7zjF8rNswgssUcRAzbQjY-Fy776sUsAGyFviG4vLWlaKGBQ6-34ChUIauDuP3NgGb-7IAx_NGPgxAoam-N30zNXqFhgy4WO6BUZX5ZcKQcM3fgHPYSEbrR2089QlB2iLEOBPsI3JsmgHh0FxRIcT_UB7tq9dRC9l3vj-NydTtVA"}, catch_response=True
+            "/account", headers={"cookie": "session_cookie=eyJjc3JmX3Rva2VuIjoiMzQ0MWM1OWYyODlkMWJlMjUyZWVkYmQ4NWJhNTU5YWFhYzExOGQyYyJ9.Yw3hBg.W2E7Kq5gg3eKOgdaSuRjBUBiFIY; fsd_user_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOiI5YTFlNGEwZi0zZjA2LTRkNzQtOWRmOC01NjI0ZTU0N2NmN2QiLCJpYXQiOjE2NjI1NTY5MTYsImV4cCI6MTY2MjY0MzMxNn0.Pj6Ub6apIy7V1cF6a0fhEEFoF-XyvAavwR_dL11Cm2g4xOk6x25ow6GohjYFbEZmLnTEtJlHMoNlfoXZVvauxg6udYyS6NEwJPP99ppzjjZkAylXFEA7AXmRlui3gOotefPEDLzL_2fpXvnfrJcPw1o8h4RLd6bq2kwxQu7Obg0"}, catch_response=True
         ) as response:
             check_expected_status(response, 200)
 
@@ -38,7 +38,7 @@ class FrontEnd(HttpUser):
         Performance test for GET new application that expects a 200
         """
         with self.client.get(
-            "/tasklist/29080057-c2e4-4a99-95e6-afd63f72dae5", catch_response=True
+            "/tasklist/baec9d16-e34d-4242-9fb9-67255d936ce9",headers={"cookie": "session_cookie=eyJjc3JmX3Rva2VuIjoiMzQ0MWM1OWYyODlkMWJlMjUyZWVkYmQ4NWJhNTU5YWFhYzExOGQyYyJ9.Yw3hBg.W2E7Kq5gg3eKOgdaSuRjBUBiFIY; fsd_user_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOiI5YTFlNGEwZi0zZjA2LTRkNzQtOWRmOC01NjI0ZTU0N2NmN2QiLCJpYXQiOjE2NjI1NTY5MTYsImV4cCI6MTY2MjY0MzMxNn0.Pj6Ub6apIy7V1cF6a0fhEEFoF-XyvAavwR_dL11Cm2g4xOk6x25ow6GohjYFbEZmLnTEtJlHMoNlfoXZVvauxg6udYyS6NEwJPP99ppzjjZkAylXFEA7AXmRlui3gOotefPEDLzL_2fpXvnfrJcPw1o8h4RLd6bq2kwxQu7Obg0"}, catch_response=True
         ) as response:
             check_expected_status(response, 200)
     
@@ -49,8 +49,9 @@ class FrontEnd(HttpUser):
         Performance test for POST submit application that expects a 200
         """
         with self.client.post(
-            "/submit_application", headers={"cookie":"session_cookie=eyJjc3JmX3Rva2VuIjoiMGZiNzQyYjkxZTkwYmFjNWIyMmQ3NzBjNDZiNjIxNzI2MjRhMDM4NyJ9.YwjnXw._QiVXgbFx4GDY_f1RbOkl1mBbAI; fsd_user_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOiJjYTNjZTQzZS1kYWZiLTRlNTktOTczNC0xZjA3YzgwM2U2ZWQiLCJpYXQiOjE2NjI1NDA5MDYsImV4cCI6MTY2MjYyNzMwNn0.ILHz1t5N4vzqHuUd1XiYLigL4PpOmZdK_LFL48j5YE7Pwm6SgXy0Iryh2xZw5jR7F4Oa8knjHLWCCjO6J_7eTqGgDMY0Q_GAd_HDb_VtDIyqn1ZoSK9K5AZcmrhAjfaWKo49FGNs42fwCWi0w9oE-RTLr4u1qfuF661X_deXWi1m7dGx9fL0zM-y8N2p-SCHSIdX9a74vM2QYQ3NtSQJc8_lnNF4ZNXQqEW_16TrQ_xEveUpPC0ZUDD1Ljj-PlnwJBeRKx4H9znZEC8Vc-R3kkX4b-sOAixkbXeUIsSz1otaLqWIQbHEy3iLuiZBXpfgSI3-glnd3l6av8ZKNRU43AuDwNpT4zpVQ17s3f3ZG9bhpDCcgL61azMrYh-ceR79q10kxvTA_9Olqa7eUUe5wTnkoQ7n-vuTemUw2NL4DeOqMbPuE2d2pjADEZLk2soz474Fvqy5eZGwMmLnHOD1ZAxLeTCk0lACwV2FeyD0cHWBpry36_deyzJSWxJvRkJT7zjF8rNswgssUcRAzbQjY-Fy776sUsAGyFviG4vLWlaKGBQ6-34ChUIauDuP3NgGb-7IAx_NGPgxAoam-N30zNXqFhgy4WO6BUZX5ZcKQcM3fgHPYSEbrR2089QlB2iLEOBPsI3JsmgHh0FxRIcT_UB7tq9dRC9l3vj-NydTtVA", 
-            "referer": "https://frontend.uat.gids.dev/tasklist/29080057-c2e4-4a99-95e6-afd63f72dae5"},
+            "/submit_application", headers={"cookie": 
+            "session_cookie=eyJjc3JmX3Rva2VuIjoiMzQ0MWM1OWYyODlkMWJlMjUyZWVkYmQ4NWJhNTU5YWFhYzExOGQyYyJ9.Yw3hBg.W2E7Kq5gg3eKOgdaSuRjBUBiFIY; fsd_user_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOiI5YTFlNGEwZi0zZjA2LTRkNzQtOWRmOC01NjI0ZTU0N2NmN2QiLCJpYXQiOjE2NjI1NTY5MTYsImV4cCI6MTY2MjY0MzMxNn0.Pj6Ub6apIy7V1cF6a0fhEEFoF-XyvAavwR_dL11Cm2g4xOk6x25ow6GohjYFbEZmLnTEtJlHMoNlfoXZVvauxg6udYyS6NEwJPP99ppzjjZkAylXFEA7AXmRlui3gOotefPEDLzL_2fpXvnfrJcPw1o8h4RLd6bq2kwxQu7Obg0", 
+            "referer":"https://frontend.dev.gids.dev/tasklist/baec9d16-e34d-4242-9fb9-67255d936ce9"},
             catch_response=True
         ) as response:
             check_expected_status(response, 200)
