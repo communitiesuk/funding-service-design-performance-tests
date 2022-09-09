@@ -18,7 +18,7 @@ class ApplicationStore(HttpUser):
     @task
     def put_new_application(self):
         """
-        Performance test for PUT /applications/sections that expects a 201
+        Performance test for PUT /applications/sections that expects a 200
         """
         with self.client.put(
             "/applications/forms",
