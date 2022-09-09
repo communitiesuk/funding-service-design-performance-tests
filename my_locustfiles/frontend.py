@@ -4,13 +4,16 @@ from common.common_methods import check_expected_status
 from common.config import FRONTEND
 from locust import HttpUser
 from locust import task
+from locust import between
 
 class FrontEnd(HttpUser):
 
+    # wait time
+    wait_time = between(30, 60)
     host = FRONTEND
    
     # Start page
-    @task
+    @task(5)
     def get_start_page(self):
         """
         Performance test for GET start page that expects a 200
@@ -21,7 +24,7 @@ class FrontEnd(HttpUser):
             check_expected_status(response, 200)
     
     # Applicant dashboard
-    @task
+    @task(5)
     def get_applicant_dashboard(self):
         """
         Performance test for GET applicant dashboard that expects a 200
@@ -32,7 +35,7 @@ class FrontEnd(HttpUser):
             check_expected_status(response, 200)
 
     # Click new application and tasklist
-    @task
+    @task(5)
     def get_new_application(self):
         """
         Performance test for GET new application that expects a 200
@@ -43,7 +46,7 @@ class FrontEnd(HttpUser):
             check_expected_status(response, 200)
     
     # Submit application
-    @task
+    @task(1)
     def submit_application(self):
         """
         Performance test for POST submit application that expects a 200

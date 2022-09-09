@@ -16,7 +16,7 @@ class ApplicationStore(HttpUser):
     status_only = "IN_PROGRESS"
 
 
-    @task
+    @task(1)
     def put_new_application(self):
         """
         Performance test for PUT /applications/sections that expects a 200
@@ -28,7 +28,7 @@ class ApplicationStore(HttpUser):
         ) as response:
             check_expected_status(response, 200)
 
-    @task
+    @task(5)
     def get_applications_for_a_fund(self):
         """
         Performance test for GET /applications?fund_id={fund_id} that expects a 200
@@ -38,7 +38,7 @@ class ApplicationStore(HttpUser):
         ) as response:
             check_expected_status(response, 200)
 
-    @task
+    @task(5)
     def get_applications_status(self):
         """
         Performance test for GET /applications?status_only={status_only} that expects a 200

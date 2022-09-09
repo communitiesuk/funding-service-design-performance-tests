@@ -12,7 +12,7 @@ class Authenticator(HttpUser):
     round_id = "c603d114-5364-4474-a0c4-c41cbf4d3bbd"
 
     # Click Start now
-    @task
+    @task(5)
     def get_click_start(self):
         """
         Performance test for GET click start that expects a 200
@@ -23,7 +23,7 @@ class Authenticator(HttpUser):
             check_expected_status(response, 200)
 
     # Enter email
-    @task
+    @task(5)
     def get_magic_link_email(self):
         """
         Performance test for GET magic link email that expects a 200
@@ -34,7 +34,7 @@ class Authenticator(HttpUser):
             check_expected_status(response, 200)
 
     # Click magic link
-    @task
+    @task(5)
     def get_magic_link_id(self):
         """
         Performance test for GET magic link ID that expects a 200
@@ -45,7 +45,7 @@ class Authenticator(HttpUser):
             check_expected_status(response, 200)
 
     # Test below using Swagger API as a reference
-    @task
+    @task(1)
     def post_create_new_magic_link(self):
         """
         Performance test for POST create new magic link that expects a 201

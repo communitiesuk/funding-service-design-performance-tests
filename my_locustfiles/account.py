@@ -11,7 +11,7 @@ class Account(HttpUser):
     email_address = "test@test.com"
    
     # Return account data
-    @task
+    @task(5)
     def get_account_data(self):
         """
         Performance test for GET account data that expects a 200

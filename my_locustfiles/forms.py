@@ -13,7 +13,7 @@ class Forms(HttpUser):
     
     # 1. About Your Organisation
     # Form: Organisation Information
-    @task
+    @task(5)
     def get_organisation_information(self):
         """
         Performance test for GET new application that expects a 200
@@ -25,7 +25,7 @@ class Forms(HttpUser):
 
     # 2. About Your Project
     # Form: Project Information
-    @task
+    @task(5)
     def get_project_information(self):
         """
         Performance test for GET project information that expects a 200
@@ -37,7 +37,7 @@ class Forms(HttpUser):
     
     # 3.Strategic Case
     # Form: Community use
-    @task
+    @task(5)
     def get_community_use(self):
         """
         Performance test for GET community use that expects a 200
@@ -49,7 +49,7 @@ class Forms(HttpUser):
     
     # 4.Management Case
     # Form: Funding required
-    @task
+    @task(5)
     def get_funding_required(self):
         """
         Performance test for GET funding required that expects a 200
@@ -62,7 +62,7 @@ class Forms(HttpUser):
 
     # 5.Potential To Deliver Community Benefits
     # Form: Community Benefits
-    @task
+    @task(5)
     def get_community_benefits(self):
         """
         Performance test for GET community benefits that expects a 200
@@ -75,7 +75,7 @@ class Forms(HttpUser):
 
     # 6.Added Value To Community
     # Form: Value To The Community
-    @task
+    @task(5)
     def get_value_to_the_community(self):
         """
         Performance test for GET value to the community that expects a 200
@@ -87,7 +87,7 @@ class Forms(HttpUser):
 
     # 7.Subsidy Control / State Aid
     # Form: Project Qualification
-    @task
+    @task(5)
     def get_project_qualification(self):
         """
         Performance test for GET project qualification that expects a 200
@@ -99,7 +99,7 @@ class Forms(HttpUser):
 
     # 8.Check Declarations
     # Form: Declarations
-    @task
+    @task(5)
     def get_declaration(self):
         """
         Performance test for GET declarations that expects a 200
