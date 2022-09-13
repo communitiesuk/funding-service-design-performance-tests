@@ -4,15 +4,17 @@ from common.common_methods import check_expected_status
 from common.config import AUTHENTICATOR
 from locust import HttpUser
 from locust import task
+from locust import between
 
 class Authenticator(HttpUser):
 
+    wait_time = between(30, 60)
     host = AUTHENTICATOR
     fund_id = "47aef2f5-3fcb-4d45-acb5-f0152b5f03c4"
     round_id = "c603d114-5364-4474-a0c4-c41cbf4d3bbd"
 
     # Click Start now
-    @task(5)
+    @task()
     def get_click_start(self):
         """
         Performance test for GET click start that expects a 200
@@ -23,7 +25,7 @@ class Authenticator(HttpUser):
             check_expected_status(response, 200)
 
     # Enter email
-    @task(5)
+    @task()
     def get_magic_link_email(self):
         """
         Performance test for GET magic link email that expects a 200
@@ -34,13 +36,13 @@ class Authenticator(HttpUser):
             check_expected_status(response, 200)
 
     # Click magic link
-    @task(5)
+    @task()
     def get_magic_link_id(self):
         """
         Performance test for GET magic link ID that expects a 200
         """
         with self.client.get(
-            "/service/magic-links/landing/jQsEppja", catch_response=True
+            "/service/magic-links/landing/UgUqSKPe", catch_response=True
         ) as response:
             check_expected_status(response, 200)
 

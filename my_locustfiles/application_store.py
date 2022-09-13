@@ -4,10 +4,12 @@ from common.common_methods import check_expected_status
 from common.config import APPLICATION_STORE
 from locust import HttpUser
 from locust import task
+from locust import between
 
 
 class ApplicationStore(HttpUser):
 
+    wait_time = between(30, 60)
     host = APPLICATION_STORE
     new_application_json_file = open(
         "./data/application_store/new_application.json", "r"
@@ -28,7 +30,7 @@ class ApplicationStore(HttpUser):
         ) as response:
             check_expected_status(response, 200)
 
-    @task(5)
+    @task()
     def get_applications_for_a_fund(self):
         """
         Performance test for GET /applications?fund_id={fund_id} that expects a 200
@@ -38,7 +40,7 @@ class ApplicationStore(HttpUser):
         ) as response:
             check_expected_status(response, 200)
 
-    @task(5)
+    @task()
     def get_applications_status(self):
         """
         Performance test for GET /applications?status_only={status_only} that expects a 200
