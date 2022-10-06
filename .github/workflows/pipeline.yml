@@ -27,7 +27,7 @@ jobs:
         - name: Run Bandit
           run: bandit . -f json -o bandit_security.json
         - name: Upload Pylama Report
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v3
           with:
             name: bandit_security.json
             path: bandit_security.json
@@ -36,7 +36,7 @@ jobs:
           run: python -m locust --users 3 --spawn-rate 1 --run-time 1s --headless
           continue-on-error: true
         - name: Upload Pylama Report
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v3
           with:
             name: locust_html_report.html
             path: locust_html_report.html
