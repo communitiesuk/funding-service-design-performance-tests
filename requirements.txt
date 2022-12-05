@@ -80,7 +80,7 @@ pbr==5.11.0
     # via stevedore
 pep517==0.13.0
     # via build
-pip-tools==6.10.0
+pip-tools==6.11.0
     # via -r requirements.in
 platformdirs==2.5.4
     # via
@@ -112,11 +112,6 @@ stevedore==4.1.1
     # via bandit
 toml==0.10.2
     # via pre-commit
-tomli==2.0.1
-    # via
-    #   black
-    #   build
-    #   pep517
 typing-extensions==4.4.0
     # via locust
 urllib3==1.26.12
