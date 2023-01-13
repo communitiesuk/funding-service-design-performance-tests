@@ -86,7 +86,7 @@ platformdirs==2.5.4
     # via
     #   black
     #   virtualenv
-pre-commit==2.20.0
+pre-commit==2.21.0
     # via -r requirements.in
 psutil==5.9.4
     # via locust
@@ -110,8 +110,6 @@ smmap==5.0.0
     # via gitdb
 stevedore==4.1.1
     # via bandit
-toml==0.10.2
-    # via pre-commit
 typing-extensions==4.4.0
     # via locust
 urllib3==1.26.12
