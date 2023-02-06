@@ -86,7 +86,7 @@ platformdirs==2.5.4
     # via
     #   black
     #   virtualenv
-pre-commit==2.21.0
+pre-commit==3.0.4
     # via -r requirements.in
 psutil==5.9.4
     # via locust
