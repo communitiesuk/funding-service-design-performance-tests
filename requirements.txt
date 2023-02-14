@@ -6,7 +6,7 @@
 #
 bandit==1.7.4
     # via -r requirements.in
-black==22.12.0
+black==23.1.0
     # via -r requirements.in
 brotli==1.0.9
     # via geventhttpclient
@@ -72,26 +72,26 @@ mypy-extensions==0.4.3
     # via black
 nodeenv==1.7.0
     # via pre-commit
-packaging==21.3
-    # via build
+packaging==23.0
+    # via
+    #   black
+    #   build
 pathspec==0.10.2
     # via black
 pbr==5.11.0
     # via stevedore
 pep517==0.13.0
     # via build
-pip-tools==6.12.1
+pip-tools==6.12.2
     # via -r requirements.in
 platformdirs==2.5.4
     # via
     #   black
     #   virtualenv
-pre-commit==2.21.0
+pre-commit==3.0.4
     # via -r requirements.in
 psutil==5.9.4
     # via locust
-pyparsing==3.0.9
-    # via packaging
 pyyaml==6.0
     # via
     #   bandit
