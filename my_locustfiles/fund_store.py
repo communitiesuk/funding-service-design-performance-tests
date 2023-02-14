@@ -6,8 +6,8 @@ from locust import task
 
 class FundStore(HttpUser):
     host = FUND_STORE
-    fund_id = "funding-service-design"
-    round_id = "spring"
+    fund_id = "47aef2f5-3fcb-4d45-acb5-f0152b5f03c4"
+    round_id = "c603d114-5364-4474-a0c4-c41cbf4d3bbd"
     search_query = "breakfast,fund"
 
     @task
