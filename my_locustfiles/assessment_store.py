@@ -9,7 +9,6 @@ from locust import task
 
 class AssessmentStore(HttpUser):
     host = ASSESSMENT_STORE
-    assessment_id = 1
     fund_id = FUND_ID
     round_id = ROUND_ID
 
