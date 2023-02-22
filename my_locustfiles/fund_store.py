@@ -1,13 +1,15 @@
 from common.common_methods import check_expected_status
 from common.config import FUND_STORE
+from common.config import FUND_ID
+from common.config import ROUND_ID
 from locust import HttpUser
 from locust import task
 
 
 class FundStore(HttpUser):
     host = FUND_STORE
-    fund_id = "47aef2f5-3fcb-4d45-acb5-f0152b5f03c4"
-    round_id = "c603d114-5364-4474-a0c4-c41cbf4d3bbd"
+    fund_id = FUND_ID
+    round_id = ROUND_ID
     search_query = "breakfast,fund"
 
     @task
