@@ -2,6 +2,7 @@ import json
 
 from common.common_methods import check_expected_status
 from common.config import APPLICATION_STORE
+from common.config import USER_AGENT
 from locust import HttpUser
 from locust import task
 
@@ -23,6 +24,7 @@ class ApplicationStore(HttpUser):
         with self.client.put(
             "/applications/forms",
             json=self.new_application_json,
+            headers={"User-Agent": USER_AGENT},
             catch_response=True,
         ) as response:
             check_expected_status(response, 200)
@@ -33,7 +35,9 @@ class ApplicationStore(HttpUser):
         Performance test for GET /applications?fund_id={fund_id} that expects a 200
         """
         with self.client.get(
-            "/applications?fund_id=''", catch_response=True
+            "/applications?fund_id=''",
+            headers={"User-Agent": USER_AGENT},
+            catch_response=True,
         ) as response:
             check_expected_status(response, 200)
 
