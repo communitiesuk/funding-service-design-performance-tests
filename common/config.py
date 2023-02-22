@@ -15,7 +15,7 @@ APPLICATION_STORE = getenv(
 
 ASSESSMENT_STORE = getenv (
     "TARGET_URL_ASESSMENT_STORE",
-    "https://funding-service-design-assessment-store-dev.london.cloudapps.digital/",
+    "https://funding-service-design-assessment-store-dev.london.cloudapps.digital",
 )
 
 print("======= URLs ==========")
