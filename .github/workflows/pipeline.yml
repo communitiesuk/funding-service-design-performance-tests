@@ -33,7 +33,7 @@ jobs:
             path: bandit_security.json
             retention-days: 5
         - name: Run performance tests
-          run: python -m locust --users 3 --spawn-rate 1 --run-time 1s --headless
+          run: python -m locust --users 3 --spawn-rate 1 --run-time 15s --headless
           continue-on-error: true
         - name: Upload Pylama Report
           uses: actions/upload-artifact@v3
