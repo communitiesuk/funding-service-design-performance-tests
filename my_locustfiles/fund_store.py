@@ -1,13 +1,16 @@
 from common.common_methods import check_expected_status
 from common.config import FUND_STORE
+from common.config import FUND_ID
+from common.config import ROUND_ID
+from common.config import USER_AGENT
 from locust import HttpUser
 from locust import task
 
 
 class FundStore(HttpUser):
     host = FUND_STORE
-    fund_id = "47aef2f5-3fcb-4d45-acb5-f0152b5f03c4"
-    round_id = "c603d114-5364-4474-a0c4-c41cbf4d3bbd"
+    fund_id = FUND_ID
+    round_id = ROUND_ID
     search_query = "breakfast,fund"
 
     @task
@@ -15,7 +18,10 @@ class FundStore(HttpUser):
         """
         Performance test for GET /funds/ that expects a 200
         """
-        with self.client.get("/funds", catch_response=True) as response:
+        with self.client.get("/funds", 
+        catch_response=True,
+        headers={"User-Agent": USER_AGENT},
+        ) as response:
             check_expected_status(response, 200)
 
     @task
@@ -26,6 +32,7 @@ class FundStore(HttpUser):
         """
         with self.client.get(
             f"/funds?search_items={self.search_query}",
+            headers={"User-Agent": USER_AGENT},
             catch_response=True,
         ) as response:
             check_expected_status(response, 200)
@@ -36,7 +43,9 @@ class FundStore(HttpUser):
         Performance test for GET /funds/{fund_id} that expects a 200
         """
         with self.client.get(
-            f"/funds/{self.fund_id}", catch_response=True
+            f"/funds/{self.fund_id}", 
+            headers={"User-Agent": USER_AGENT},
+            catch_response=True,
         ) as response:
             check_expected_status(response, 200)
 
@@ -47,7 +56,9 @@ class FundStore(HttpUser):
          that expects a 200
         """
         with self.client.get(
-            f"/funds/{self.fund_id}/rounds/{self.round_id}", catch_response=True
+            f"/funds/{self.fund_id}/rounds/{self.round_id}", 
+            headers={"User-Agent": USER_AGENT},
+            catch_response=True,
         ) as response:
             check_expected_status(response, 200)
 
@@ -57,6 +68,8 @@ class FundStore(HttpUser):
         Performance test for GET /funds/{fund_id}/rounds that expects a 200
         """
         with self.client.get(
-            f"/funds/{self.fund_id}/rounds", catch_response=True
+            f"/funds/{self.fund_id}/rounds",
+            headers={"User-Agent": USER_AGENT},
+            catch_response=True,
         ) as response:
             check_expected_status(response, 200)
