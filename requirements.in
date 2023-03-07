@@ -1,4 +1,4 @@
-locust==2.14.2
+locust==2.15.0
 bandit==1.7.4
 black==23.1.0
 pre-commit==3.0.4
