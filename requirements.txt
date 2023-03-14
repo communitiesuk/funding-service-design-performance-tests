@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.in
 #
-bandit==1.7.4
+bandit==1.7.5
     # via -r requirements.in
 black==23.1.0
     # via -r requirements.in
@@ -62,10 +62,14 @@ jinja2==3.1.2
     # via flask
 locust==2.15.0
     # via -r requirements.in
+markdown-it-py==2.2.0
+    # via rich
 markupsafe==2.1.1
     # via
     #   jinja2
     #   werkzeug
+mdurl==0.1.2
+    # via markdown-it-py
 msgpack==1.0.4
     # via locust
 mypy-extensions==0.4.3
@@ -92,6 +96,8 @@ pre-commit==3.1.1
     # via -r requirements.in
 psutil==5.9.4
     # via locust
+pygments==2.14.0
+    # via rich
 pyyaml==6.0
     # via
     #   bandit
@@ -100,6 +106,8 @@ pyzmq==24.0.1
     # via locust
 requests==2.28.1
     # via locust
+rich==13.3.2
+    # via bandit
 roundrobin==0.0.4
     # via locust
 six==1.16.0
