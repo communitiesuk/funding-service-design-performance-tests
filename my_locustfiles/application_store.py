@@ -19,7 +19,7 @@ class ApplicationStore(HttpUser):
     @task
     def put_new_application(self):
         """
-        Performance test for PUT /applications/sections that expects a 200
+        Performance test for PUT /applications/forms that expects a 201 or 200
         """
         with self.client.put(
             "/applications/forms",
@@ -27,7 +27,10 @@ class ApplicationStore(HttpUser):
             headers={"User-Agent": USER_AGENT},
             catch_response=True,
         ) as response:
-            check_expected_status(response, 200)
+            if response.status_code == 201:
+               check_expected_status(response, 201)
+            else:
+               check_expected_status(response, 200)
 
     @task
     def get_applications_for_a_fund(self):
