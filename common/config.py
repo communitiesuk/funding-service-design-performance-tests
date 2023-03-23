@@ -10,7 +10,7 @@ FUND_STORE = getenv(
 )
 APPLICATION_STORE = getenv(
     "TARGET_URL_APPLICATION_STORE",
-    "https://funding-service-design-application-store-dev.london.cloudapps.digital",  # noqa
+    "https://funding-service-design-application-store-dev.london.cloudapps.digital",  
 )
 
 ASSESSMENT_STORE = getenv (
