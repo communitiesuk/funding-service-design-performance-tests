@@ -15,23 +15,19 @@ class ApplicationStore(HttpUser):
     )
     new_application_json = json.loads(new_application_json_file.read())
 
-
     @task
-    def put_new_application(self):
+    def post_new_application(self):
         """
-        Performance test for PUT /applications/forms that expects a 201 or 200
+        Performance test for POST /applications that expects a 201
         """
-        with self.client.put(
-            "/applications/forms",
+        with self.client.post(
+            "/applications",
             json=self.new_application_json,
             headers={"User-Agent": USER_AGENT},
-            catch_response=True,
+            catch_response=True, 
         ) as response:
-            if response.status_code == 201:
-               check_expected_status(response, 201)
-            else:
-               check_expected_status(response, 200)
-
+             check_expected_status(response, 201)
+           
     @task
     def get_applications_for_a_fund(self):
         """
@@ -42,5 +38,5 @@ class ApplicationStore(HttpUser):
             headers={"User-Agent": USER_AGENT},
             catch_response=True,
         ) as response:
-            check_expected_status(response, 200)
+             check_expected_status(response, 200)
 
