@@ -98,7 +98,7 @@ pre-commit==3.2.2
     # via -r requirements.in
 psutil==5.9.4
     # via locust
-pygments==2.14.0
+pygments==2.15.0
     # via rich
 pyyaml==6.0
     # via
