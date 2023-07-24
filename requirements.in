@@ -1,5 +1,5 @@
 locust==2.15.1
 bandit==1.7.5
-black==23.3.0
+black==23.7.0
 pre-commit==3.2.2
 pip-tools==7.1.0
