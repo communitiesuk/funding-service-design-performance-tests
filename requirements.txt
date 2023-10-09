@@ -122,7 +122,7 @@ stevedore==4.1.1
     # via bandit
 typing-extensions==4.4.0
     # via locust
-urllib3==1.26.12
+urllib3==1.26.17
     # via requests
 virtualenv==20.16.7
     # via pre-commit
