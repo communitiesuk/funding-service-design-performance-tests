@@ -6,7 +6,7 @@
 #
 bandit==1.7.5
     # via -r requirements.in
-black==23.9.1
+black==23.10.0
     # via -r requirements.in
 blinker==1.6.2
     # via flask
@@ -50,7 +50,7 @@ geventhttpclient==2.0.8
     # via locust
 gitdb==4.0.9
     # via gitpython
-gitpython==3.1.35
+gitpython==3.1.37
     # via bandit
 greenlet==3.0.0rc3
     # via gevent
@@ -94,7 +94,7 @@ platformdirs==2.5.4
     # via
     #   black
     #   virtualenv
-pre-commit==3.4.0
+pre-commit==3.5.0
     # via -r requirements.in
 psutil==5.9.4
     # via locust
@@ -122,7 +122,7 @@ stevedore==4.1.1
     # via bandit
 typing-extensions==4.4.0
     # via locust
-urllib3==1.26.17
+urllib3==1.26.18
     # via requests
 virtualenv==20.16.7
     # via pre-commit
