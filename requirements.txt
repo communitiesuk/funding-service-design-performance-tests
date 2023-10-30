@@ -6,7 +6,7 @@
 #
 bandit==1.7.5
     # via -r requirements.in
-black==23.10.0
+black==23.10.1
     # via -r requirements.in
 blinker==1.6.2
     # via flask
@@ -120,8 +120,16 @@ smmap==5.0.0
     # via gitdb
 stevedore==4.1.1
     # via bandit
+tomli==2.0.1
+    # via
+    #   black
+    #   build
+    #   pep517
+    #   pip-tools
 typing-extensions==4.4.0
-    # via locust
+    # via
+    #   black
+    #   locust
 urllib3==1.26.18
     # via requests
 virtualenv==20.16.7
