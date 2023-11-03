@@ -34,8 +34,8 @@ jobs:
             retention-days: 5
         - name: Run performance tests
           run: python -m locust --users 3 --spawn-rate 1 --run-time 15s --headless
-          continue-on-error: true
         - name: Upload Pylama Report
+          if: success() || failure()
           uses: actions/upload-artifact@v3
           with:
             name: locust_html_report.html
