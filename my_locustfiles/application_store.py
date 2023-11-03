@@ -3,6 +3,8 @@ import json
 from common.common_methods import check_expected_status
 from common.config import APPLICATION_STORE
 from common.config import USER_AGENT
+from common.config import FUND_ID
+from common.config import ROUND_ID
 from locust import HttpUser
 from locust import task
 
@@ -10,6 +12,8 @@ from locust import task
 class ApplicationStore(HttpUser):
 
     host = APPLICATION_STORE
+    fund_id = FUND_ID
+    round_id = ROUND_ID
     new_application_json_file = open(
         "./data/application_store/new_application.json", "r"
     )
@@ -47,6 +51,18 @@ class ApplicationStore(HttpUser):
         """
         with self.client.get(
             "/applications/reporting/applications_statuses_data",
+            headers={"User-Agent": USER_AGENT},
+            catch_response=True,
+        ) as response:
+             check_expected_status(response, 200)
+    
+    @task
+    def get_key_data_report_on_applications(self):
+        """
+        Performance test for GET /applications/reporting/key_application_metrics that expects a 200
+        """
+        with self.client.get(
+            "/applications/reporting/key_application_metrics",
             headers={"User-Agent": USER_AGENT},
             catch_response=True,
         ) as response:
