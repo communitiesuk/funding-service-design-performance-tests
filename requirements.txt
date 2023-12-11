@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.in
 #
-bandit==1.7.5
+bandit==1.7.6
     # via -r requirements.in
 black==23.11.0
     # via -r requirements.in
