@@ -6,16 +6,16 @@ from os import getenv
 
 FUND_STORE = getenv(
     "TARGET_URL_FUND_STORE",
-    "https://funding-service-design-fund-store-dev.london.cloudapps.digital",
+    "http://fsd-fund-store.dev.pre-award.local:8080",
 )
 APPLICATION_STORE = getenv(
     "TARGET_URL_APPLICATION_STORE",
-    "https://funding-service-design-application-store-dev.london.cloudapps.digital",  
+    "http://fsd-application-store.dev.pre-award.local:8080",  
 )
 
 ASSESSMENT_STORE = getenv (
     "TARGET_URL_ASSESSMENT_STORE",
-    "https://funding-service-design-assessment-store-dev.london.cloudapps.digital",
+    "http://fsd-assessment-store.dev.pre-award.local:8080",
 )
 
 
