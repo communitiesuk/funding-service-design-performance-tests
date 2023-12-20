@@ -14,7 +14,7 @@ class FundStore(HttpUser):
     search_query = "breakfast,fund"
 
     @task
-    def list_all_funds(self):
+    def get_list_of_all_funds(self):
         """
         Performance test for GET /funds/ that expects a 200
         """
@@ -25,20 +25,7 @@ class FundStore(HttpUser):
             check_expected_status(response, 200)
 
     @task
-    def get_a_fund_search(self):
-        """
-        Performance test for GET /funds?search_items={search_query}
-         that expects a 200.
-        """
-        with self.client.get(
-            f"/funds?search_items={self.search_query}",
-            headers={"User-Agent": USER_AGENT},
-            catch_response=True,
-        ) as response:
-            check_expected_status(response, 200)
-
-    @task
-    def get_fund(self):
+    def get_a_fund(self):
         """
         Performance test for GET /funds/{fund_id} that expects a 200
         """
@@ -50,7 +37,19 @@ class FundStore(HttpUser):
             check_expected_status(response, 200)
 
     @task
-    def get_funding_round(self):
+    def get_all_rounds_for_a_fund(self):
+        """
+        Performance test for GET /funds/{fund_id}/rounds that expects a 200
+        """
+        with self.client.get(
+            f"/funds/{self.fund_id}/rounds",
+            headers={"User-Agent": USER_AGENT},
+            catch_response=True,
+        ) as response:
+            check_expected_status(response, 200)
+
+    @task
+    def get_data_on_specific_round_for_specific_fund(self):
         """
         Performance test for GET /funds/{fund_id}/rounds/{round_id}
          that expects a 200
@@ -61,15 +60,42 @@ class FundStore(HttpUser):
             catch_response=True,
         ) as response:
             check_expected_status(response, 200)
-
+    
     @task
-    def get_fund(self):
+    def get_list_of_flag_allocations(self):
         """
-        Performance test for GET /funds/{fund_id}/rounds that expects a 200
+        Performance test for GET /funds/{fund_id}/rounds/{round_id}/available_flag_allocations
+         that expects a 200
         """
         with self.client.get(
-            f"/funds/{self.fund_id}/rounds",
+            f"/funds/{self.fund_id}/rounds/{self.round_id}/available_flag_allocations", 
             headers={"User-Agent": USER_AGENT},
             catch_response=True,
         ) as response:
             check_expected_status(response, 200)
+    
+    @task
+    def get_application_sections_for_given_round(self):
+        """
+        Performance test for GET /funds/{fund_id}/rounds/{round_id}/sections/application
+         that expects a 200
+        """
+        with self.client.get(
+            f"/funds/{self.fund_id}/rounds/{self.round_id}/sections/application", 
+            headers={"User-Agent": USER_AGENT},
+            catch_response=True,
+        ) as response:
+            check_expected_status(response, 200)
+
+    @task
+    def get_search_a_fund(self):
+        """
+        Performance test for GET /funds?search_items={search_query}
+         that expects a 200.
+        """
+        with self.client.get(
+            f"/funds?search_items={self.search_query}",
+            headers={"User-Agent": USER_AGENT},
+            catch_response=True,
+        ) as response:
+            check_expected_status(response, 200)  
