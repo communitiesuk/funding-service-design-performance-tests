@@ -1,6 +1,9 @@
 # funding-service-design-performance-tests
 Performance Tests for the funding service design platform
 
+NOTE: These tests no longer work due to data stores not being exposed in AWS. The ticket below will look into how to get these tests running again in AWS:
+https://dluhcdigital.atlassian.net/browse/FS-3950
+
 ## Prerequisites
 - locust
 
