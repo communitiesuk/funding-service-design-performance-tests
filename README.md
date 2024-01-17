@@ -1,8 +1,7 @@
 # funding-service-design-performance-tests
 Performance Tests for the funding service design platform
 
-NOTE: These tests no longer work due to data stores not being exposed in AWS. The ticket below will look into how to get these tests running again in AWS:
-https://dluhcdigital.atlassian.net/browse/FS-3950
+NOTE: Running the test with python -m locust will no longer work as the data stores are not exposed in AWS. You will need to follow the steps for running the tests via AWS Copilot.  
 
 ## Prerequisites
 - locust
