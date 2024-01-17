@@ -6,6 +6,9 @@ https://dluhcdigital.atlassian.net/browse/FS-3950
 
 ## Prerequisites
 - locust
+- AWS Vault: https://dluhcdigital.atlassian.net/wiki/spaces/FS/pages/5241813/Using+AWS+Vault+SSO
+- AWS CLI, AWS Copilot: https://dluhcdigital.atlassian.net/wiki/spaces/FS/pages/65339803/AWS+Troubleshooting
+- Docker Desktop 
 
 # Getting started
 
@@ -36,6 +39,13 @@ From the top-level directory enter the command to install pip and the dependenci
 Enter the virtual environment as described above, then:
 
 python -m locust
+
+or to run via AWS Copilot do the below:
+
+aws-vault exec <profile_name>
+copilot task run --env-vars TARGET_URL_FUND_STORE=http://fsd-fund-store.<env_name>.pre-award.local:8080,TARGET_URL_APPLICATION_STORE=http://fsd-application-store.<env_name>.pre-award.local:8080,TARGET_URL_ASSESSMENT_STORE=http://fsd-assessment-store.<env_name>.pre-award.local:8080 --follow
+
+
 
 # Locust config
 There is a locust config file in the repository that manages how the tests are run and where they are run against. Change the values in there based on the needs of your performance testing. The host can be changed to point at a local running version of the application.
