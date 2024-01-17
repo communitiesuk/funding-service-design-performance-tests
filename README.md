@@ -1,7 +1,7 @@
 # funding-service-design-performance-tests
 Performance Tests for the funding service design platform
 
-NOTE: Running the test with python -m locust will no longer work as the data stores are not exposed in AWS. You will need to follow the steps for running the tests via AWS Copilot.  
+NOTE: Running the test locally with python -m locust will no longer work as the data stores are not exposed in AWS. You will need to follow the steps for running the tests via AWS Copilot.  
 
 ## Prerequisites
 - locust
@@ -34,7 +34,7 @@ From the top-level directory enter the command to install pip and the dependenci
 
     python3 -m pip install --upgrade pip && pip install -r requirements.txt
 
-## How to use
+## How to run the Locust tests locally
 Enter the virtual environment as described above, then:
 
     python -m locust
