@@ -38,12 +38,13 @@ From the top-level directory enter the command to install pip and the dependenci
 ## How to use
 Enter the virtual environment as described above, then:
 
-python -m locust
+    python -m locust
 
 or to run via AWS Copilot do the below:
 
-aws-vault exec <profile_name>
-copilot task run --env-vars TARGET_URL_FUND_STORE=http://fsd-fund-store.<env_name>.pre-award.local:8080,TARGET_URL_APPLICATION_STORE=http://fsd-application-store.<env_name>.pre-award.local:8080,TARGET_URL_ASSESSMENT_STORE=http://fsd-assessment-store.<env_name>.pre-award.local:8080 --follow
+    aws-vault exec <profile_name>
+
+    copilot task run --env-vars TARGET_URL_FUND_STORE=http://fsd-fund-store.<env_name>.pre-award.local:8080,TARGET_URL_APPLICATION_STORE=http://fsd-application-store.<env_name>.pre-award.local:8080,TARGET_URL_ASSESSMENT_STORE=http://fsd-assessment-store.<env_name>.pre-award.local:8080 --follow
 
 
 
