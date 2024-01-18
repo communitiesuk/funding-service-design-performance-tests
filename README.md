@@ -1,5 +1,5 @@
 # funding-service-design-performance-tests
-Performance Tests for the funding service design platform
+Performance Tests for the Funding Service Design Pre Award Project
 
 NOTE: Running the test locally with python -m locust will no longer work as the data stores are not exposed in AWS. You will need to follow the steps for running the tests via AWS Copilot.  
 
@@ -41,6 +41,8 @@ Enter the virtual environment as described above, then:
 
 Or to run via AWS Copilot do the below:
 
+Open Docker Desktop
+
 Login to AWS Vault:
 
     aws-vault exec <profile_name>
@@ -48,7 +50,6 @@ Login to AWS Vault:
 Run AWS Copilot Task below:
 
     copilot task run --env-vars TARGET_URL_FUND_STORE=http://fsd-fund-store.<env_name>.pre-award.local:8080,TARGET_URL_APPLICATION_STORE=http://fsd-application-store.<env_name>.pre-award.local:8080,TARGET_URL_ASSESSMENT_STORE=http://fsd-assessment-store.<env_name>.pre-award.local:8080 --follow
-
 
 
 # Locust config
