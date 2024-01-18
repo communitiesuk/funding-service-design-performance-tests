@@ -41,15 +41,23 @@ Enter the virtual environment as described above, then:
 
 Or to run via AWS Copilot do the below:
 
+
 Open Docker Desktop
+
 
 Login to AWS Vault:
 
     aws-vault exec <profile_name>
 
+
 Run AWS Copilot Task below:
 
     copilot task run --env-vars TARGET_URL_FUND_STORE=http://fsd-fund-store.<env_name>.pre-award.local:8080,TARGET_URL_APPLICATION_STORE=http://fsd-application-store.<env_name>.pre-award.local:8080,TARGET_URL_ASSESSMENT_STORE=http://fsd-assessment-store.<env_name>.pre-award.local:8080 --follow
+
+
+In which application would you like to run this task? > pre-award
+
+In which environment would you like to run this task? > test
 
 
 # Locust config
