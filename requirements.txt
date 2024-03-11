@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.in
 #
-bandit==1.7.6
+bandit==1.7.8
     # via -r requirements.in
 black==23.11.0
     # via -r requirements.in
@@ -48,10 +48,6 @@ gevent==23.9.1
     #   locust
 geventhttpclient==2.0.11
     # via locust
-gitdb==4.0.9
-    # via gitpython
-gitpython==3.1.37
-    # via bandit
 greenlet==3.0.0rc3
     # via gevent
 identify==2.5.9
@@ -116,8 +112,6 @@ six==1.16.0
     # via
     #   flask-cors
     #   geventhttpclient
-smmap==5.0.0
-    # via gitdb
 stevedore==4.1.1
     # via bandit
 tomli==2.0.1
