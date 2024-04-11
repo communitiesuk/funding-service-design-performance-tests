@@ -1,11 +1,13 @@
 # funding-service-design-performance-tests
-Performance Tests for the funding service design platform
+Performance Tests for the Funding Service Design Pre Award Project
 
-NOTE: These tests no longer work due to data stores not being exposed in AWS. The ticket below will look into how to get these tests running again in AWS:
-https://dluhcdigital.atlassian.net/browse/FS-3950
+NOTE: Running the test locally with python -m locust will no longer work as the data stores are not exposed in AWS. You will need to follow the steps for running the tests via AWS Copilot.  
 
 ## Prerequisites
 - locust
+- AWS Vault: https://dluhcdigital.atlassian.net/wiki/spaces/FS/pages/5241813/Using+AWS+Vault+SSO
+- AWS CLI, AWS Copilot: https://dluhcdigital.atlassian.net/wiki/spaces/FS/pages/65339803/AWS+Troubleshooting
+- Docker Desktop 
 
 # Getting started
 
@@ -32,10 +34,31 @@ From the top-level directory enter the command to install pip and the dependenci
 
     python3 -m pip install --upgrade pip && pip install -r requirements.txt
 
-## How to use
+## How to run the Locust tests locally
 Enter the virtual environment as described above, then:
 
-python -m locust
+    python -m locust
+
+Or to run via AWS Copilot do the below:
+
+
+Open Docker Desktop
+
+
+Login to AWS Vault:
+
+    aws-vault exec <profile_name>
+
+
+Run AWS Copilot Task below:
+
+    copilot task run --env-vars TARGET_URL_FUND_STORE=http://fsd-fund-store.<env_name>.pre-award.local:8080,TARGET_URL_APPLICATION_STORE=http://fsd-application-store.<env_name>.pre-award.local:8080,TARGET_URL_ASSESSMENT_STORE=http://fsd-assessment-store.<env_name>.pre-award.local:8080 --follow
+
+
+In which application would you like to run this task? > pre-award
+
+In which environment would you like to run this task? > test
+
 
 # Locust config
 There is a locust config file in the repository that manages how the tests are run and where they are run against. Change the values in there based on the needs of your performance testing. The host can be changed to point at a local running version of the application.
