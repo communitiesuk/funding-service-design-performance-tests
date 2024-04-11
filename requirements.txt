@@ -50,7 +50,7 @@ geventhttpclient==2.0.11
     # via locust
 gitdb==4.0.9
     # via gitpython
-gitpython==3.1.37
+gitpython==3.1.41
     # via bandit
 greenlet==3.0.0rc3
     # via gevent
