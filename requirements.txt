@@ -6,7 +6,7 @@
 #
 bandit==1.7.6
     # via -r requirements.in
-black==24.3.0
+black==24.4.0
     # via -r requirements.in
 blinker==1.6.2
     # via flask
