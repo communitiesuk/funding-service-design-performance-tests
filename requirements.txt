@@ -12,7 +12,7 @@ blinker==1.6.2
     # via flask
 brotli==1.0.9
     # via geventhttpclient
-build==0.9.0
+build==1.2.1
     # via pip-tools
 certifi==2023.7.22
     # via
@@ -86,9 +86,7 @@ pathspec==0.10.2
     # via black
 pbr==5.11.0
     # via stevedore
-pep517==0.13.0
-    # via build
-pip-tools==7.3.0
+pip-tools==7.4.1
     # via -r requirements.in
 platformdirs==2.5.4
     # via
@@ -100,6 +98,10 @@ psutil==5.9.4
     # via locust
 pygments==2.15.0
     # via rich
+pyproject-hooks==1.0.0
+    # via
+    #   build
+    #   pip-tools
 pyyaml==6.0
     # via
     #   bandit
@@ -124,8 +126,8 @@ tomli==2.0.1
     # via
     #   black
     #   build
-    #   pep517
     #   pip-tools
+    #   pyproject-hooks
 typing-extensions==4.4.0
     # via black
 urllib3==1.26.18
